@@ -103,7 +103,9 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 //物件管理情報登録
 //
 // function fnSqlArticleInsert($articleNo,  $keyPlace, $article, $address,  $keyBox, $articleNote, $drawing, $sellCharge, $room, $del)
-function fnSqlArticleInsert($articleNo, $article, $room, $keyPlace, $address, $articleNote, $keyBox, $drawing, $sellCharge, $del)
+//function fnSqlArticleInsert($articleNo, $article, $room, $keyPlace, $address, $articleNote, $keyBox, $drawing, $sellCharge, $del)
+
+function fnSqlArticleInsert($articleNo, $keyPlace, $article, $address, $keyBox, $articleNote, $drawing, $sellCharge, $room, $del)
 {
 	// $sql  = "INSERT INTO tblarticle (";
 	$sql = "INSERT INTO TBLARTICLE (";
