@@ -80,19 +80,19 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>物件名</th>
-					<td><input type="text" name="sArticle" value="<?php print $sArticle ?>" size="50" /></td>
+					<td><input type="text" name="sArticle" value="<?php print $sRooms ?>" size="50" /></td>
 					<th>キーBox番号</th>
 					<td><input type="text" name="sKeyBox" value="<?php print $sKeyBox ?>" size="30" /></td>
 				</tr>
 				<tr>
 					<th>部屋番号</th>
-					<td><input type="text" name="sRoom" value="" size="30" /><?php print $sRoom ?></td>
+					<td><input type="text" name="sRoom" value="" size="30" /><?php print $sArticle ?></td>
 					<th>3Dパース</th>
 					<td><input type="text" name="sDrawing" value="<?php print $sDrawing ?>" size="30" /></td>
 				</tr>
 				<tr>
 					<th>鍵場所</th>
-					<td><input type="text" name="sKeyPlace" value="<?php print $sKagPlace ?>" size="30" /></td>
+					<td><input type="text" name="sKeyPlace" value="<?php print $sKayPlace ?>" size="30" /></td>
 					<th>営業担当者</th>
 					<td><input type="text" name="sSellCharge" value="<?php print $sSellCharge ?>" /></td>
 				</tr>
@@ -154,7 +154,7 @@ function subArticle()
 				$drawing     = $row["DRAWING"];
 				$sellCharge  = $row["SELLCHARGE"];
 			?>
-				<tr>
+				<!-- <tr>
 					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value='<?php print $rrticleNo ?>';form.submit();"><?php print $article ?></a></td>
 					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
@@ -163,6 +163,16 @@ function subArticle()
 					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $sellCharge ?></td>
 					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='stock';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
+				</tr> -->
+				<tr>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value=<?php print $articleNo ?>;form.submit();"><?php print $article ?></a></td>
+					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $keyPlace ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $articleNote ?></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='fManager';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
+					<td class="list_td<?php print $i ?>"><?php print $keyBox ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $sellCharge ?></td>
 				</tr>
 			<?php
 				$i = ($i + 1) % 3;
