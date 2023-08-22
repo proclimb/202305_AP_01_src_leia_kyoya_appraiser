@@ -9,7 +9,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 			$sql  = "SELECT COUNT(*)";
 			break;
 		case 1:
-			$sql  = "SELECT ARTICLENO, ARTICLE, ROOM, KEYPLACE, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE";
+			$sql  = "SELECT ARTICLENO, ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE";
 			break;
 	}
 
@@ -68,9 +68,11 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 //
 function fnSqlArticleEdit($articleNo)
 {
-	$sql  = "SELECT ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE, DEL";
+
+
+	$sql = "SELECT ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE, DEL";
 	$sql .= " FROM TBLARTICLE";
-	$sql .= " WHERE ARTICLENO = 1";
+	$sql .= " WHERE ARTICLENO = $articleNo";
 
 	return ($sql);
 }
@@ -105,7 +107,9 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 // function fnSqlArticleInsert($articleNo,  $keyPlace, $article, $address,  $keyBox, $articleNote, $drawing, $sellCharge, $room, $del)
 //function fnSqlArticleInsert($articleNo, $article, $room, $keyPlace, $address, $articleNote, $keyBox, $drawing, $sellCharge, $del)
 
-function fnSqlArticleInsert($articleNo, $keyPlace, $article, $address, $keyBox, $articleNote, $drawing, $sellCharge, $room, $del)
+// function fnSqlArticleInsert($articleNo, $keyPlace, $article, $address, $keyBox, $articleNote, $drawing, $sellCharge, $room, $del)
+function fnSqlArticleInsert($articleNo, $article, $room, $keyPlace, $address, $articleNote, $keyBox, $drawing, $sellCharge, $del)
+
 {
 	// $sql  = "INSERT INTO tblarticle (";
 	$sql = "INSERT INTO TBLARTICLE (";
@@ -118,8 +122,6 @@ function fnSqlArticleInsert($articleNo, $keyPlace, $article, $address, $keyBox, 
 		. " CONSTPRICE, CONSTADD, CONSTNOTE, PURCHASEDT, WORKSTARTDT, WORKENDDT, LINEOPENDT, LINECLOSEDT, RECEIVE, HOTWATER, SITEDT, LEAVINGFORM,"
 		. " LEAVINGDT, MANAGECOMPANY, FLOORPLAN, FORMEROWNER, BROKERCHARGE, BROKERCONTACT, INTERIORCHARGE, CONSTFLG1, CONSTFLG2, CONSTFLG3, CONSTFLG4, INSDT, UPDT, DEL,"
 		. " DRAWING, LINEOPENCONTACTDT, LINECLOSECONTACTDT, LINECONTACTNOTE, ELECTRICITYCHARGE, GASCHARGE, LIGHTORDER";
-
-
 
 	$sql .= " ) VALUES ( ";
 	$sql .= "'$articleNo', '$article', '$room', '$keyPlace', '$address', '$articleNote', '$keyBox', '', '$sellCharge', '', '', '', '', '',"
