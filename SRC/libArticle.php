@@ -60,6 +60,8 @@ function subArticle()
 	<h1>物件管理一覧</h1>
 
 	<form name="form" id="form" action="index.php" method="post">
+
+
 		<input type="hidden" name="act" value="articleSearch" />
 		<input type="hidden" name="orderBy" value="<?php print $orderBy ?>" />
 		<input type="hidden" name="orderTo" value="<?php print $orderTo ?>" />
@@ -258,8 +260,8 @@ function subArticleEdit()
 				<th>除外</th>
 				<?php if ($articleNo) { ?>
 					<td>
-						<input type="checkbox" name="del" value="1" checked="checked" /> 非除外
-						<input type="checkbox" name="del" value="0" <?php if ($del == '0') print ' checked="checked"' ?> /> 除外
+						<input type="radio" name="del" value="1" checked="checked" /> 非除外
+						<input type="radio" name="del" value="0" <?php if ($del == '0') print ' checked="checked"' ?> /> 除外
 					</td>
 				<?php } else { ?>
 					<td>
