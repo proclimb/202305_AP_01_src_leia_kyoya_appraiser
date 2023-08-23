@@ -84,9 +84,11 @@ function fnSqlTradeUpdate($tradeNo, $name, $nameFuri, $branch, $branchFuri, $zip
 	$sql .= ",ADDRESS1 = '$address1'";
 	$sql .= ",ADDRESS2 = '$address2'";
 	$sql .= ",TEL = '$tel'";
+
 	$sql .= ",FAX = '$fax'";
 	$sql .= ",MOBILE = '$mobile'";
 	$sql .= ",INTERIOR = '$interior'";
+	$sql .= ",UPDT = CURRENT_TIMESTAMP";
 	$sql .= ",DEL = '$del'";
 	$sql .= " WHERE TRADENO = $tradeNo";
 
