@@ -110,8 +110,8 @@ function subStockView($param)
 			</table>
 		</div>
 
-		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockEditComplete';form.submit();" />
-		<!-- ↑もコンプリートじゃないものに書き換えた方がいいってこと？？？ -->
+		<!-- <input type="image" src="./images/btn_search.png" onclick="form.act.value='stockEditComplete';form.submit();" /> -->
+		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockSearch';form.submit();" />
 		<hr />
 
 		<?php
