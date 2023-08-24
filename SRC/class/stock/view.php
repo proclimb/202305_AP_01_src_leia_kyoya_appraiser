@@ -152,24 +152,7 @@ function subStockView($param)
 				var_dump($sql);
 				$res  = mysqli_query($param["conn"], $sql);
 				$i = 0;
-				// while ($row = mysqli_fetch_array($res)) {
-				// 	$stockNo     = htmlspecialchars($row[1]);
-				// 	$charge      = htmlspecialchars($row[2]);
-				// 	$rank        = fnRankName(htmlspecialchars($row[3] - 1));
-				// 	$insDT       = htmlspecialchars($row[4]);
-				// 	$article     = htmlspecialchars($row[5]);
-				// 	$articleFuri = htmlspecialchars($row[6]);
-				// 	$room        = htmlspecialchars($row[7]);
-				// 	$area        = htmlspecialchars($row[8]);
-				// 	$station     = htmlspecialchars($row[9]);
-				// 	$distance    = fnRankName(htmlspecialchars($row[10] - 1));
-				// 	$agent       = htmlspecialchars($row[11]);
-				// 	$store       = htmlspecialchars($row[12]);
-				// 	$cover       = htmlspecialchars($row[13]);
-				// 	$visitDT     = htmlspecialchars($row[14]);
-				// 	$deskPrice   = htmlspecialchars(fnNumFormat($row[15]));
-				// 	$vendorPrice = htmlspecialchars(fnNumFormat($row[16]));
-				// 	$note        = htmlspecialchars($row[17]);
+
 				while ($row = mysqli_fetch_array($res)) {
 					$stockNo = htmlspecialchars($row[0]);
 					$charge = htmlspecialchars($row[1]);
