@@ -69,6 +69,7 @@ function subArticle()
 		<input type="hidden" name="articleNo" />
 		<input type="hidden" name="sName" />
 
+
 		<a href="javascript:form.act.value='articleEdit';form.submit();"><img src="./images/btn_enter.png"></a>
 
 		<div class="search">
