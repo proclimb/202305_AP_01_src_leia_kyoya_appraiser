@@ -27,7 +27,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 	$sql .= " FROM TBLARTICLE";
 	$sql .= " WHERE DEL = $sDel";
 	if ($sArticle) {
-		$sql .= " OR ARTICLE LIKE '%$sArticle$%'";
+		$sql .= " AND ARTICLE LIKE '%$sArticle%'";
 	}
 	if ($sRoom) {
 		$sql .= " OR ROOM LIKE '%$sRoom%'";
@@ -39,7 +39,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 		$sql .= " OR ARTICLENOTE LIKE '%$sArticleNote%'";
 	}
 	if ($sKeyBox) {
-		$sql .= " OR KEYBOX LIKE '%l$sKeyBox%'";
+		$sql .= " AND KEYBOX LIKE '%$sKeyBox%'";
 	}
 	if ($sDrawing) {
 		$sql .= " OR DRAWING LIKE '%$sDrawing%'";
