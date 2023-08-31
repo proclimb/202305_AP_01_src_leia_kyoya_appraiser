@@ -10,6 +10,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 			break;
 		case 1:
 			$sql  = "SELECT ARTICLENO, ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE";
+			// $sql  = "SELECT ARTICLENO, ARTICLE, ROOM, KEYPLACE, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE";
 			break;
 	}
 
@@ -50,9 +51,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 	if ($orderBy) {
 		$sql .= " ORDER BY $orderBy $orderTo";
 	}
-	// if ($flg) {
-	// 	$sql .= " LIMIT " . (($sPage + 1) * PAGE_MAX) . ", " . PAGE_MAX;
-	// }
+
 
 	if ($flg) {
 		$sql .= " LIMIT " . (($sPage - 1) * PAGE_MAX) . ", " . PAGE_MAX;
@@ -88,7 +87,7 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 	$sql .= " SET ARTICLE = '$article'";
 	$sql .= ",ROOM = '$room'";
 	$sql .= ",KEYPLACE = '$keyPlace'";
-	$sql .= ",ADDRESS = '$address";
+	$sql .= ",ADDRESS = '$address'";
 	$sql .= ",ARTICLENOTE = '$articleNote'";
 	$sql .= ",KEYBOX = '$keyBox'";
 	$sql .= ",DRAWING = '$drawing'";
